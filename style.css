@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'space_timeregular';
+    src: url('fonts/spacetime-regular-webfont.woff2') format('woff2'),
+         url('fonts/spacetime-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'vintage_schoolregular';
+    src:
+        url('fonts/vintageschool-webfont.woff2') format('woff2'),
+        url('fonts/vintageschool-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    display: flex;
+    flex-direction: row;
+}
+
+/* image container style */
+
+.img-container {
+    background: url('img/thunderstorm-3625405_1920.jpg') no-repeat center;
+    width: 40vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-container {
+    position: relative;
+    top: 20vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container > span{
+    font-family: space_timeregular, serif;
+    font-size: 10vh;
+    color: #fff;
+}
+
+.logo-container img {
+    width: 10vh;
+}
+
+/* form styling */
+
+.form-container {
+    margin-left: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-description {
+    font-size: 2ch;
+    width: 70ch;
+    font-weight: bold;
+}
+
+.registration {
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    text-transform: uppercase;
+    font-size: .8em;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    margin-bottom: 40px;
+}
+
+.button > button {
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: blue;
+    padding: 1rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
