@@ -27,25 +27,35 @@ body {
     padding: 0;
     margin: 0;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5em;
+    background-color: #757780;
 
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
+
 
 /* image container style */
 
 .img-container {
-    background: url('img/thunderstorm-3625405_1920.jpg') no-repeat center;
+    padding: 0;
+    margin: 0;
+    background: url('img/sign-up-rafiki.svg') no-repeat center;
+    background-color: #001011;
+    /* size: 100%; */
     width: 40vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
 }
 
 .logo-container {
     position: relative;
-    top: 20vh;
-    background-color: rgba(0, 0, 0, 0.3);
+    top: 5vh;
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -54,7 +64,7 @@ body {
 
 .logo-container > span{
     font-family: space_timeregular, serif;
-    font-size: 10vh;
+    font-size: 4em;
     color: #fff;
 }
 
@@ -63,51 +73,144 @@ body {
 }
 
 /* form styling */
-
 .form-container {
-    margin-left: 2em;
+    background-color: #757780;
+    color: #FFFFFC;
+}
+
+.registration, .form-description {
+    padding: 1.5em;
+}
+
+.section {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-flow: row wrap;
+    align-items: center;
+    /* gap: 3em; */
 }
 
-.form-description {
-    font-size: 2ch;
-    width: 70ch;
-    font-weight: bold;
-}
-
-.registration {
-    border-top: solid 1px;
-    border-bottom: solid 1px;
-    padding-bottom: 40px;
-    margin-bottom: 30px;
-}
-
-.form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    text-transform: uppercase;
-    font-size: .8em;
+.sub-section {
+    display: flex;
+    flex-flow: column wrap;
+    margin-right: 5em;
+    margin-bottom: 2em;
+    text-transform: uppercase   ;
+    font-size: .6em;
 }
 
 label {
-    display: flex;
-    flex-direction: column;
+    font-size: .7em;
+    margin-bottom: .6em;
+}
+
+.required {
+    color: red;
+}
+
+input {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+}
+
+input::placeholder {
+    font-size: 1.2em;
+    opacity: .3;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="password"]:focus {
+    appearance: none;
+    /* background-color: #fff; */
+    color: #001011;
+    border-bottom: solid #fff;
+    outline: none;
+    font-size: 1.2em;
+}
+
+.button, .login-link {
+    margin: 1.5em;
+}
+
+input[type="text"], input[type="tel"], input[type="email"], input[type="password"] {
+    border-bottom: solid gray 1px;
+    width: 100%;
+    height: 4ch;
+    background:none
+}
+
+input[type="text"]::placeholder, input[type="tel"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder {
+    color: #001011;
 }
 
 .button {
-    margin-bottom: 40px;
-}
-
-.button > button {
+    color: #FFFFFC;
+    background-color: #001011;
     font-size: 1em;
     font-weight: bold;
-    color: #fff;
-    background-color: blue;
     padding: 1rem;
     border-radius: 12px;
     border: none;
     cursor: pointer;
+}
+
+a {
+    color: #001011;
+}
+
+@media  only screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .img-container {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+    }
+
+    .logo-container {
+        position: relative;
+        top: 0;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        background-color: transparent;
+    }
+
+    .logo-container > span {
+        font-size: 100%;
+    }
+
+    .logo-container > img {
+        width: 5vw;
+    }
+
+    .section, .sub-section {
+        display: flex;
+        flex-direction: column;
+        font-size: 1em;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    input[type="text"], input[type="tel"], input[type="email"], input[type="password"] {
+        border-bottom: solid gray 1px;
+        width: 40ch;
+        height: 4ch;
+        background:none
+    }
+
+    label {
+        font-size: 1em;
+    }
+
+    .form-description {
+        width: 30ch;
+    }
+
+    .login-link {
+        margin-bottom: 12px;
+    }
 }
