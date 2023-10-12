@@ -1,3 +1,10 @@
+:root {
+    --b-bg-color : #8A7E72;
+    --img-bg-color: #001011;
+    --font-color: #FFFFFC;
+    --border-color: #FEFFFE;
+}
+
 @font-face {
     font-family: 'space_timeregular';
     src: url('fonts/spacetime-regular-webfont.woff2') format('woff2'),
@@ -26,9 +33,10 @@ html {
 body {
     padding: 0;
     margin: 0;
+    height: 100vh;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 1.5em;
-    background-color: #757780;
+    background-color: var(--b-bg-color);
 
     display: flex;
     flex-direction: row;
@@ -42,11 +50,12 @@ body {
     padding: 0;
     margin: 0;
     background: url('img/sign-up-rafiki.svg') no-repeat center;
-    background-color: #001011;
+    background-color: var(--img-bg-color);
     /* size: 100%; */
     width: 40vw;
     height: 100vh;
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: stretch;
     justify-content: stretch;
@@ -65,7 +74,7 @@ body {
 .logo-container > span{
     font-family: space_timeregular, serif;
     font-size: 4em;
-    color: #fff;
+    color: var(--font-color);
 }
 
 .logo-container img {
@@ -74,8 +83,8 @@ body {
 
 /* form styling */
 .form-container {
-    background-color: #757780;
-    color: #FFFFFC;
+    background-color: var(--b-bg-color);
+    color: var(--font-color);
 }
 
 .registration, .form-description {
@@ -86,16 +95,15 @@ body {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    /* gap: 3em; */
 }
 
 .sub-section {
     display: flex;
     flex-flow: column wrap;
-    margin-right: 5em;
+    margin-right: 4em;
     margin-bottom: 2em;
     text-transform: uppercase   ;
-    font-size: .6em;
+    font-size: 1em;
 }
 
 label {
@@ -118,33 +126,45 @@ input::placeholder {
     opacity: .3;
 }
 
+input[type="text"], input[type="tel"], input[type="email"], input[type="password"] {
+    border-bottom: solid var(--border-color) 1px;
+    width: 35ch;
+    height: 3ch;
+    background:none
+}
+
 input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="password"]:focus {
     appearance: none;
     /* background-color: #fff; */
     color: #001011;
-    border-bottom: solid #fff;
+    border-bottom: solid var(--font-color);
     outline: none;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .button, .login-link {
     margin: 1.5em;
 }
 
-input[type="text"], input[type="tel"], input[type="email"], input[type="password"] {
-    border-bottom: solid gray 1px;
-    width: 100%;
-    height: 4ch;
-    background:none
+.login-link {
+    margin-bottom: 2em;
 }
 
 input[type="text"]::placeholder, input[type="tel"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder {
     color: #001011;
 }
 
+input[type="email"]:focus:valid, input[type="text"]:focus:valid, input[type="password"]:focus:valid, input[type="tel"]:focus:valid {
+    border-bottom: solid 1px green;
+}
+
+input[type="email"]:focus:invalid, input[type="text"]:focus:invalid, input[type="tel"]:focus:invalid, input[type="password"]:focus:invalid {
+    border-bottom: solid 1px red;
+}
+
 .button {
-    color: #FFFFFC;
-    background-color: #001011;
+    color: var(--font-color);
+    background-color: var(--img-bg-color);
     font-size: 1em;
     font-weight: bold;
     padding: 1rem;
@@ -154,16 +174,25 @@ input[type="text"]::placeholder, input[type="tel"]::placeholder, input[type="ema
 }
 
 a {
-    color: #001011;
+    color: var(--img-bg-color);
+}
+
+.button:hover {
+    transform: scale(1.1);
+    transition: ease-in-out;
 }
 
 @media  only screen and (max-width: 768px) {
     body {
+        padding: 0;
+        margin: 0;
+        height: auto;
+        display: flex;
         flex-direction: column;
     }
 
     .img-container {
-        width: 100%;
+        width: 100vw;
         height: 30vh;
         display: flex;
         flex-direction: row;
@@ -181,6 +210,7 @@ a {
 
     .logo-container > span {
         font-size: 100%;
+        flex: 1;
     }
 
     .logo-container > img {
@@ -191,19 +221,24 @@ a {
         display: flex;
         flex-direction: column;
         font-size: 1em;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: flex-start;
     }
 
     input[type="text"], input[type="tel"], input[type="email"], input[type="password"] {
-        border-bottom: solid gray 1px;
-        width: 40ch;
-        height: 4ch;
+        border-bottom: solid var(--border-color) 1px;
+        width: 30ch;
+        height: 3ch;
         background:none
     }
 
+    input[type="text"]::placeholder, input[type="tel"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder {
+        color: #001011;
+        font-size: 1.2em;
+    }
+
     label {
-        font-size: 1em;
+        font-size: .8em;
     }
 
     .form-description {
