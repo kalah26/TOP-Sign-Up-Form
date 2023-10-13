@@ -13,15 +13,6 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'vintage_schoolregular';
-    src:
-        url('fonts/vintageschool-webfont.woff2') format('woff2'),
-        url('fonts/vintageschool-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 html {
     box-sizing: border-box;
 }
